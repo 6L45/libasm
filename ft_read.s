@@ -9,17 +9,17 @@ ft_read:
 	mov	rbp, rsp
 	; ------------------------
 
-	mov	rax, 0
+	mov	rax, 0	; set rax for sys_read
 	syscall
 
-	cmp	rax, 0
-	jge	quit
+	cmp	rax, 0	; if (rax == 0)
+	jge	quit	;	goto(quit)
 
-	neg	rax
+	neg	rax		; rax *= -1
 	mov	rdi, rax
-	call __errno_location	WRT ..plt
+	call __errno_location	WRT ..plt	; return a pointer to errno in rax
 
-	mov	[rax], rdi
+	mov	[rax], rdi	; *errno = rdi
 	mov	rax, -0x1
 
 	quit:
