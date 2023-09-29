@@ -11,7 +11,7 @@ ft_strcmp:
 	xor	rax, rax
 
 	loop:
-		; BYTE technically useless that's mostly for reader| Byte -> 0000 0000 = 0 - 256 = char
+		; BYTE technically useless that's mostly for reader| Byte -> 0000 0000 = 0 -> 256 = char
 		cmp	BYTE [rdi + rcx], 0		; if (str1[rcx]  == '\0')
 		je	quit				;	goto(quit)
 		cmp	BYTE [rsi + rcx], 0		; if (str2[rcx]  == '\0')
