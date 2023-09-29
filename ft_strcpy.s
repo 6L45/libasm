@@ -16,18 +16,18 @@ ft_strcpy:
 	; 1  -  1 =>  0
 
 	loop:
-		cmp	BYTE [rsi + rcx], 0	; if (str2[rcx] == '\0')
+		cmp	BYTE [rsi + rcx], 0		; if (str2[rcx] == '\0')
 		je	exit				;	goto(exit)
 
 		; str1[rcx] = str2[rcx]
-		mov	al, BYTE [rsi + rcx]	; mov BYTE [rdi + rcx], BYTE [rsi + rcx] doesn't work
-		mov	BYTE [rdi + rcx], al	; so al extra-step
+		mov	al, BYTE [rsi + rcx]		; mov BYTE [rdi + rcx], BYTE [rsi + rcx] doesn't work
+		mov	BYTE [rdi + rcx], al		; so al extra-step
 
-		inc rcx		; rcx++
-		jmp loop	; goto(loop)
+		inc rcx					; rcx++
+		jmp loop				; goto(loop)
 
 	exit:
-		mov	BYTE [rdi + rcx], 0
+		mov	BYTE [rdi + rcx], 0		; str1[-1] = '\0'
 		mov	rax, rdi
 
 	; EPILOGUE
