@@ -29,7 +29,7 @@ ft_strdup:
 		neg	rax				; rax *= -1
 		mov	rdi, rax
 		call __errno_location	WRT ..plt	; return a pointer to errno in rax
-		mov	[rax], 0xc			; *rax = 12	=> code errno = 12 = ENOMEM
+		mov	qword [rax], 0xc		; *rax = 12	=> code errno = 12 = ENOMEM
 		mov	rax, 0x0			; rax = 0
 
 		ret
