@@ -148,7 +148,7 @@ ft_atoi_base:
 	;                    for [d] = 16^2
 	;                    for [3] = 16^1
 	;                    for the last one we just add the number to the value
-	; and finaly for every one if those value but the last
+	; and finaly for every each one of those values but the last
 	; we multiply by the associated valor in base before adding it to the final value to return
 
 
