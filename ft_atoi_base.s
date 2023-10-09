@@ -217,9 +217,6 @@ ft_atoi_base:
 	last_nbr:
 		add	rbx, r13					; rax += r13
 		jmp	return						; return (rax)
-
-;	mov	rax, r12
-;	jmp	return
 ; ------------------------------------------------------------------------------------
 
 	err:
