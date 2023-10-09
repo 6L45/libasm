@@ -229,8 +229,8 @@ ft_atoi_base:
 	return:
 		mov	rax, rbx	; return (rbx)
 
-	movsx	rbx, BYTE [rbp -0x24]	
-	mul	rbx
+	movsx	rbx, BYTE [rbp -0x24]	; (movsx = mov to dest from src while conserving negative sign)
+	mul	rbx			; rax *= sign
 
 	quit:
 		leave  			; EPILOGUE => mov	rsp, rbp
