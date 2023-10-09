@@ -17,11 +17,15 @@ int	main(int argc, char **argv)
 {
 	t_list	*lst = NULL;
 
+	printf("la\n");
 	for (int i = 1; i < argc; i++)
 	{
 		ft_list_push_front(&lst, ft_lstnew(argv[i]));
 	}
+	printf("la\n");
 
+	int	len = ft_list_size(lst);
+	printf("%d\n", len);
 
 	t_list	*tmp = lst;
 	while (lst)
