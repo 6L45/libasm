@@ -229,8 +229,10 @@ ft_atoi_base:
 	return:
 		mov	rax, rbx	; return (rbx)
 
+	movsx	rbx, BYTE [rbp -0x24]	
+	mul	rbx
+
 	quit:
 		leave  			; EPILOGUE => mov	rsp, rbp
 					;             pop	rbp
-
  	ret
