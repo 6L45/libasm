@@ -11,7 +11,7 @@ ft_list_size:
 		je	return			;		return (rax)
 						; 	else
 		mov	rdi, [rdi + 0x8]	;		rdi = rdi->(+0x8)	// (pointer size = 0x8) to access next pointer after data (void *) +0x8
-		inc	rax			; 	rax++
+		add	rax, 0x1			; 	rax++
 		jmp	loop			; }
 
 	return:
