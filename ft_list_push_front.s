@@ -29,21 +29,21 @@ return:
 
 
 ft_list_push_front:
-	cmp	rdi, 0			; if (!rdi || !rsi)
-	je	err			;	goto(err)
+	cmp	rdi, 0				; if (!rdi || !rsi)
+	je	err				;	goto(err)
 	cmp	rsi, 0
 	je	err
 
-	push	rdi			; rdi -> stack
-	mov	rdi, rsi		; rdi = rsi
-	call	ft_create_elem		; call ft_create_elem above
-	pop	rdi			; rdi (on stack) -> back to rdi
-	cmp	rax, 0			; if (!ft_create_elem)
-	je	err			;	goto(err)
+	push	rdi				; rdi -> stack
+	mov	rdi, rsi			; rdi = rsi
+	call	ft_create_elem			; call ft_create_elem above
+	pop	rdi				; rdi (on stack) -> back to rdi
+	cmp	rax, 0				; if (!ft_create_elem)
+	je	err				;	goto(err)
 
 	; INIT LIST -------
-	cmp	QWORD [rdi], 0		; if (!rdi)
-	je	init			;	goto(init)
+	cmp	QWORD [rdi], 0			; if (!rdi)
+	je	init				;	goto(init)
 
 	; ADD ELEMENT -----
 	add_elem:
@@ -51,7 +51,7 @@ ft_list_push_front:
 		mov	[rax + 0x8], rdx	; rax->next = rdx
 
 	init:
-		mov [rdi], rax		; *rdi = rax
+		mov [rdi], rax			; *rdi = rax
 		jmp	quit
 
 	err:
