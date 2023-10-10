@@ -24,8 +24,8 @@ ft_create_elem:
 		mov	qword [rax], 0xc		; *rax = 12	=> code errno = 12 = ENOMEM
 		mov	rax, 0x0			; rax = 0
 
-	return:
-		ret
+return:
+	ret
 
 
 ft_list_push_front:
