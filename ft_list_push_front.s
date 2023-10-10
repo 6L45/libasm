@@ -47,8 +47,8 @@ ft_list_push_front:
 
 	; ADD ELEMENT -----
 	add_elem:
-	mov	rdx, [rdi]		; rdx = *rdi
-	mov	[rax + 0x8], rdx	; rax->next = rdx
+		mov	rdx, [rdi]		; rdx = *rdi
+		mov	[rax + 0x8], rdx	; rax->next = rdx
 
 	init:
 		mov [rdi], rax		; *rdi = rax
