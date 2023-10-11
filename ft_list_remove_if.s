@@ -1,7 +1,6 @@
 SECTION	.text
 	GLOBAL	ft_list_remove_if
 
-
 ; rdi => 1rst arg	rdi => **t_list
 ; rsi => 2nd arg	rsi => *data_ref
 ; rdx => 3rd arg	rdx => (*cmp)()
