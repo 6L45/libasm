@@ -68,7 +68,16 @@ int	main(int argc, char **argv)
 			tmp = tmp->next;
 		}
 	}
-	
+	ft_list_sort(&lst, strcmp);
+	{
+		t_list	*tmp = lst;
+		while (tmp)
+		{
+			printf("-%s-\n", (char *)tmp->data);
+			tmp = tmp->next;
+		}
+	}
+
 	ft_list_remove_if(&lst, "math", strcmp, free);
 	printf("\n\n");
 
@@ -76,7 +85,7 @@ int	main(int argc, char **argv)
 		t_list	*tmp = lst;
 		while (lst)
 		{
-			printf("%s\n", (char *)lst->data);
+			printf("[%s]\n", (char *)lst->data);
 			tmp = lst->next;
 			free(lst);
 			lst = tmp;

@@ -7,18 +7,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-typedef struct	s_list
+int	main()
 {
-	void *data;
-	struct s_list *next;
-}		t_list;
-
-int	ft_atoi_base(char *str, char *base);
-
-int	main(int argc, char **argv)
-{
-	printf("%d\n", ft_atoi_base("dsfgsdfg", "acvedf"));
-
 	return (0);
 }
-

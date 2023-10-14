@@ -7,6 +7,7 @@ BONUSN	= $(BONUSNAME).a
 
 # COMPILER
 CC	= gcc
+CPP	= c++
 ASM	= nasm
 
 # FLAGS
@@ -36,7 +37,7 @@ BONUS	= ${SRCPLUS:.s=.o}
 TSTNAME	= $(BASICNAME)
 TSTB	= $(BONUSNAME)
 MAIN	= main.c
-MAINB	= main_list.c
+MAINB	= main_bonus.cpp
 
 
 # BUILD RULES #
@@ -74,7 +75,7 @@ t1: all
 	$(CC) $(FLAGS) $(MAIN) $(LINK) -o $(TSTNAME)
 
 t2: bonus
-	$(CC) $(FLAGS) $(MAINB) $(LINKB) -o a #$(TSTB)
+	$(CPP) $(FLAGS) $(MAINB) $(LINKB) -o $(TSTB)
 # ---------------------------------------------
 
 .PHONY: all clean fclean re test bonus

@@ -44,5 +44,4 @@ ft_list_sort:
 			jmp	loop			; }
 
 	quit:
-		leave
 		ret
