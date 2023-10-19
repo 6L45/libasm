@@ -20,7 +20,6 @@ int	main(int argc, char **argv)
 		printf("please provide 2 arguments (len argv[1] larger or equal than len argv[2])\n");
 		return (1);
 	}
-
 	
 	printf("STRLEN argv[1] ------------\n");
 	printf("%ld\n", ft_strlen(argv[1]));
@@ -71,7 +70,6 @@ int	main(int argc, char **argv)
 
 	close(fd);
 	printf("---------------------------\n\n");
-
 	
 	printf("STRDUP ARGV[1] -------------\n");
 	char *buf;
@@ -81,7 +79,5 @@ int	main(int argc, char **argv)
 	free(buf);
 	printf("---------------------------\n\n");
 
-
 	return (0);
 }
-
