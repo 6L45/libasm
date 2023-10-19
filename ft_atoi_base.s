@@ -92,7 +92,6 @@ ft_atoi_base:
 		jmp	sign_check_loop				;	else
 								;		r10++
 								; }
-
 	negatif:
 		mov	BYTE [rbp - 0x24], -0x1			; sign = -1
 
