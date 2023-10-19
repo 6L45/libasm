@@ -150,7 +150,6 @@ ft_atoi_base:
 	; and finaly for every each one of those values but the last
 	; we multiply by the associated valor in base before adding it to the final value to return
 
-
 	; RECAP VARS: register / stack
 	;
 	; rax				; return value
@@ -165,7 +164,6 @@ ft_atoi_base:
 	; rsi				; base
 	; r10				; pos in rdi (i)
 	; r12				; len_val
-
 
 	;NEW
 	; r13				; itérator (j)
