@@ -14,7 +14,7 @@ ASM	= nasm
 ASMFLG	= -f elf64
 LINK	= -L. -lasm
 LINKB	= -L. -lasm_bonus
-FLAGS	= -Wall -Werror -Wextra
+FLAGS	= -Wall -Werror -Wextra -z noexecstack
 
 # SRCS FILES
 SRCS	= ft_strlen.s\
