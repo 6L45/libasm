@@ -25,20 +25,20 @@ ft_list_remove_if:
 	sub	rsp, 0x10
 
 	mov	[rbp - 0x10], rdi	; rbp - 0x10 = **rdi
+	mov	[rbp - 0x08], rsi	; rbp - 0x8 = *data_ref
 
 	mov	r15, [rdi]	; r15 = *rdi		// iterator
 	mov	r14, 0x0	; r14 = NULL		// prev
 	mov	r13, rcx	; r13 = free()
 	mov	r12, rdx	; r12 = cmp
 	mov	r11, [rdi]	; r11 = *rdi		// begining of the list pointer
-	mov	r10, rsi	; r10 = rsi		// data_ref
 
 	loop:
 		cmp	r15, 0x0			; while (r15)
 		je	quit				; {
 
 		mov	rdi, [r15]			;	|
-		mov	rsi, r10			;	| eax = cmp(r15->data, data_ref)
+		mov	rsi, QWORD [rbp - 0x8]		;	| eax = cmp(r15->data, data_ref)
 		call	r12				;	|
 		cmp	eax, 0x0			;	if (!eax)
 		je	remove				;		goto(remove)
